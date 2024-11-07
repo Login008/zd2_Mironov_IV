@@ -20,6 +20,7 @@ namespace УП_2
                     if (!char.IsLetter(ch) && !char.IsWhiteSpace(ch)) //Проверка на ввод только букв и пробелов
                     {
                         MessageBox.Show("Разрешенно вводить только буквы");
+                        name = "";
                         return;
                     }
                 }
@@ -34,6 +35,7 @@ namespace УП_2
                 if (value.Length != 14 || value[0] != '(' || value[4] != ')' || value[8] != '-' || value[11] != '-') //Проверка на введение номера в строгом формате (000)000-00-00
                 {
                     MessageBox.Show("Некорректный формат номера");
+                    phone = null;
                     return;
                 }
                 foreach (var ch in value)
@@ -41,6 +43,7 @@ namespace УП_2
                     if (!char.IsDigit(ch) && !char.IsPunctuation(ch)) //проверка на цифры
                     {
                         MessageBox.Show("Разрешенно вводить только цифры, знаки << ( >>, << ) >> и << - >>");
+                        phone = "";
                         return;
                     }
                 }

@@ -26,7 +26,7 @@ namespace УП_2
                 if (dialogResult == DialogResult.Yes)
                 {
                     string[] item = listBox1.Items[listBox1.SelectedIndex].ToString().Split('~');
-                    phoneBook.RemoveContact(item[0]); //Удаление контакта
+                    phoneBook.RemoveContact(item[0], item[1]); //Удаление контакта
                     ShowContacts(); //Отображение новых контактов
                     PhoneBookLoader.Save(phoneBook, "contacts (2024).csv"); //Сохраняем данные
 
